@@ -11,12 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::any('/', "WechatController@index");
 
 Route::get('test', function(){
    return 'test';
 });
 
-Route::any('/wechat', "WechatController@index");
