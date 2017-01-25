@@ -33,6 +33,7 @@ class WechatController extends Controller
                case 'event':
                    break;
                case 'text':
+                   return $message->content;
                    break;
                case 'image':
                    break;
