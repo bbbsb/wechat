@@ -16,5 +16,3 @@ Route::any('/', "WechatController@index");
 Route::get('test', function(){
    return 'test';
 });
-
-Route::get('admin', "");
