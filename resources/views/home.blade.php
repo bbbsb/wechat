@@ -10,6 +10,12 @@
                 <div class="panel-body">
                     You are logged in!
                 </div>
+                <div class="panel-body">
+                    <a href="{{url('/home/createArticle')}}">创建文章</a>
+                </div>
+                <div class="panel-body">
+                    <a href="{{url('/home/articleList')}}">文章列表</a>
+                </div>
             </div>
         </div>
     </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
+use Validator;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,5 +31,36 @@ class HomeController extends Controller
     public function createArticle()
     {
         return view('article.create');
+    }
+
+    public function createArticleHandler(Request $request)
+    {
+        Article::create($request->all());
+        dd($request->all());
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'title' => 'required|min:3|max:255',
+            'image' => 'required',
+            'content' => 'required',
+        ]);
+    }
+
+    public function articleList()
+    {
+        $articles = Article::all();
+        return view('article.list', compact('articles'));
+    }
+
+    public function editArticle(Request $request)
+    {
+
+    }
+
+    public function deleteArticle(Request $request)
+    {
+        Article::destroy($request->id);
     }
 }

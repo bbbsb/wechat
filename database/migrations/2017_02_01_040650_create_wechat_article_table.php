@@ -18,7 +18,6 @@ class CreateWechatArticleTable extends Migration
             $table->string('title');
             $table->string('image');
             $table->text('content');
-            $table->tinyInteger('published');
             $table->timestamps();
         });
     }

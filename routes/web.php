@@ -20,9 +20,12 @@ Route::get('test', function(){
    return 'test';
 });
 
-Route::get('createArticle', "HomeController@createArticle");
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/home/createArticle', "HomeController@createArticle");
+Route::post('/home/createArticleHandler', 'HomeController@createArticleHandler');
+Route::get('/home/articleList', 'HomeController@articleList');
 
