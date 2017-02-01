@@ -20,8 +20,9 @@ Route::get('test', function(){
    return 'test';
 });
 
-Route::get('article', "ArticleController@index");
+Route::get('createArticle', "HomeController@createArticle");
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
