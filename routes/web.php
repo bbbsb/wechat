@@ -19,3 +19,9 @@ Route::any('/wechat', "WechatController@index");
 Route::get('test', function(){
    return 'test';
 });
+
+Route::get('article', "ArticleController@index");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
