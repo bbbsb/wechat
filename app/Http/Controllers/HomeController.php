@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use EasyWeChat\Foundation\Application;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -62,5 +63,23 @@ class HomeController extends Controller
     public function deleteArticle(Request $request)
     {
         Article::destroy($request->id);
+    }
+
+    public function publishArticle()
+    {
+        $cfg = [
+            'app_id' => 'wx3db2aee0760bd36a',
+            'secret' => '8f0470faa641cb07ed9273092c095587',
+            'token'  => 'smallbaby',
+
+            'debug'  => true,
+            'log'    => [
+                'level' => 'debug',
+            ]
+        ];
+
+        $app= new Application($cfg);
+        $broadcast = $app->broadcast;
+        $broadcast->sendText("大家好！欢迎使用 EasyWeChat。");
     }
 }

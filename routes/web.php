@@ -29,3 +29,4 @@ Route::get('/home/createArticle', "HomeController@createArticle");
 Route::post('/home/createArticleHandler', 'HomeController@createArticleHandler');
 Route::get('/home/articleList', 'HomeController@articleList');
 
+Route::get('/home/publishArticle', "HomeController@publishArticle");
